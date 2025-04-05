@@ -15,13 +15,13 @@
             --green-dark: #4F6F52;
             --green-light: #A9B388;
         }
-        
+
         body {
             font-family: 'Montserrat', sans-serif;
             color: #333;
-            background-color: #FDF6EC;
+            background-color: #FDF6EC; /* Match background from good code */
         }
-        
+
         .btn-primary {
             background-color: var(--green-dark);
             color: white;
@@ -29,20 +29,38 @@
             border-radius: 0.5rem;
             font-weight: 600;
             transition: all 0.3s;
+            display: inline-block; /* Ensure consistent display */
+            text-align: center; /* Ensure text centers */
         }
-        
+
         .btn-primary:hover {
             background-color: var(--brown-dark);
             transform: translateY(-2px);
         }
-        
+
+        .btn-secondary { /* Added for consistency if needed, like the border button */
+             border: 2px solid white;
+             color: white;
+             padding: 0.625rem 1.5rem; /* Adjusted padding slightly */
+             border-radius: 0.5rem;
+             font-weight: 500;
+             transition: all 0.3s;
+        }
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--brown-dark);
+        }
+
+
         .section-title {
             color: var(--brown-dark);
             position: relative;
             display: inline-block;
             margin-bottom: 2rem;
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700; /* bold */
         }
-        
+
         .section-title::after {
             content: "";
             position: absolute;
@@ -52,24 +70,30 @@
             height: 3px;
             background-color: var(--green-dark);
         }
-        
+
         .product-card {
             transition: all 0.3s ease;
             border: 1px solid transparent;
+            background-color: white; /* Match card background */
+            border-radius: 0.5rem; /* rounded-lg */
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
         }
-        
+
         .product-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             border: 1px solid var(--brown-light);
         }
-        
+
         .nav-link {
             position: relative;
             color: var(--brown-dark);
             font-weight: 500;
+            padding-top: 0.25rem; /* Added for better vertical align */
+            padding-bottom: 0.25rem;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -80,84 +104,114 @@
             background-color: var(--green-dark);
             transition: width 0.3s;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         .coffee-origin-card {
             border-left: 4px solid var(--green-dark);
             transition: all 0.3s;
+            background-color: white;
+            border-radius: 0.5rem; /* Added */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Added */
         }
-        
+
         .coffee-origin-card:hover {
             transform: translateX(10px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        
-        .form-input {
+
+        .form-input, .form-select, .form-textarea { /* Unified form elements styling */
             border: 1px solid var(--brown-light);
             border-radius: 0.5rem;
             padding: 0.75rem 1rem;
             transition: all 0.3s;
+            width: 100%; /* Ensure full width */
+            background-color: white; /* Ensure consistent background */
+            color: #333;
         }
-        
-        .form-input:focus {
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
             outline: none;
             border-color: var(--green-dark);
             box-shadow: 0 0 0 3px rgba(79, 111, 82, 0.2);
         }
 
+        /* Using the hero background from the ugly code but applying overlay like the good code */
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
-        
-        .cart-btn {
+             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1497515114629-f71d768fd07c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+             background-size: cover;
+             background-position: center;
+             color: white;
+         }
+
+        .cart-btn { /* Adjusted from ugly code's add-to-cart */
             background-color: var(--brown-dark);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
             font-weight: 600;
             transition: all 0.3s;
-            width: 140px;
+            /* width: 140px; /* Removed fixed width for flexibility */
             text-align: center;
             display: inline-block;
+            cursor: pointer; /* Ensure pointer */
+            border: none; /* Ensure no default border */
         }
-        
+
         .cart-btn:hover {
             background-color: var(--green-dark);
             transform: translateY(-2px);
         }
-        
+
         #orderForm {
-            display: none;
+            display: none; /* Initially hidden */
         }
-        
+
         .active-tab {
             background-color: var(--green-dark);
             color: white;
+            border-bottom: 2px solid var(--green-dark); /* Added for visual cue */
         }
+         /* Inactive tab style */
+        .inactive-tab {
+             background-color: #FDF6EC; /* Light background */
+             color: var(--brown-dark);
+             border-bottom: 2px solid transparent;
+         }
 
         .founders-card {
             transition: all 0.3s ease;
+            background-color: white; /* Added */
+            border-radius: 0.5rem; /* Added */
+            overflow: hidden; /* Added */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Added */
         }
-        
+
         .founders-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
+        /* QR Code Container Styling from Good Code */
         .qr-code-container {
             display: none;
-            margin-top: 20px;
+            margin-top: 1rem; /* Adjusted margin */
+            padding: 1rem;
+            background-color: #f9fafb; /* bg-gray-100 */
+            border-radius: 0.5rem; /* rounded-lg */
+            text-align: center;
         }
-        
+         .qr-code-container img {
+             margin-left: auto;
+             margin-right: auto;
+             height: 12rem; /* h-48 */
+         }
+
         .notification {
             position: fixed;
-            top: 20px;
+            top: 80px; /* Adjusted position below fixed nav */
             right: 20px;
             padding: 15px 20px;
             border-radius: 5px;
@@ -167,13 +221,15 @@
             opacity: 0;
             transform: translateY(-20px);
             transition: opacity 0.3s, transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Added shadow */
         }
-        
+
         .notification.show {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
+        /* Quantity button styling from good code */
         .quantity-btn {
             background-color: var(--brown-light);
             color: white;
@@ -185,60 +241,320 @@
             border-radius: 4px;
             cursor: pointer;
             user-select: none;
+            transition: background-color 0.2s;
+            border: none; /* Ensure no default border */
         }
+        .quantity-btn:hover {
+            background-color: var(--brown-medium);
+        }
+        /* Style for the number input between quantity buttons */
+         .quantity-input {
+             width: 3rem; /* w-12 */
+             text-align: center;
+             padding-top: 0.25rem; /* py-1 */
+             padding-bottom: 0.25rem;
+             border-top: 1px solid var(--brown-light);
+             border-bottom: 1px solid var(--brown-light);
+             border-left: none;
+             border-right: none;
+             background-color: white;
+             color: #333;
+             /* Remove spinners for number input */
+             -moz-appearance: textfield;
+             appearance: textfield;
+         }
+         .quantity-input::-webkit-outer-spin-button,
+         .quantity-input::-webkit-inner-spin-button {
+             -webkit-appearance: none;
+             margin: 0;
+         }
+
+
+        /* Authentication Modal Styling */
+        .auth-modal {
+            background-color: white;
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            width: 100%;
+            max-width: 28rem; /* max-w-md */
+            margin: 1rem; /* mx-4 */
+        }
+        .auth-tab {
+            flex: 1;
+            padding-top: 0.75rem; /* py-3 */
+            padding-bottom: 0.75rem;
+            text-align: center;
+            font-weight: 600; /* font-semibold */
+            cursor: pointer;
+            border-bottom: 2px solid transparent; /* Default border */
+            color: var(--brown-medium); /* Default color */
+            transition: all 0.3s;
+        }
+        .auth-tab-active {
+            border-bottom: 2px solid var(--green-dark); /* Use theme color */
+            color: var(--green-dark); /* Use theme color */
+        }
+        /* Style the close button */
+        #close-auth-modal {
+            padding: 0.75rem 1rem; /* px-4 py-3 */
+            color: var(--brown-medium); /* text-gray-500 */
+        }
+        #close-auth-modal:hover {
+            color: var(--brown-dark); /* text-gray-700 */
+        }
+        /* Auth form inputs should use form-input styling */
+        #auth-modal input[type="email"],
+        #auth-modal input[type="password"],
+        #auth-modal input[type="text"],
+        #auth-modal input[type="tel"] {
+            border: 1px solid var(--brown-light);
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        #auth-modal input:focus {
+            outline: none;
+            border-color: var(--green-dark);
+            box-shadow: 0 0 0 3px rgba(79, 111, 82, 0.2);
+        }
+         /* Auth buttons should use btn-primary styling */
+         #login-button, #register-button {
+            background-color: var(--green-dark);
+            color: white;
+            padding: 0.75rem 1rem; /* py-2 px-4 */
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            width: 100%;
+            border: none; /* Ensure no default border */
+         }
+         #login-button:hover, #register-button:hover {
+            background-color: var(--brown-dark);
+            transform: translateY(-2px);
+         }
+         #auth-modal a { /* Style links within modal */
+             color: var(--green-dark);
+         }
+         #auth-modal a:hover {
+             color: var(--brown-dark);
+             text-decoration: underline;
+         }
+
+         /* Order Confirmation Modal Styling */
+        .confirmation-modal {
+            background-color: white;
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            width: 100%;
+            max-width: 28rem; /* max-w-md */
+            margin: 1rem; /* mx-4 */
+            padding: 1.5rem; /* p-6 */
+        }
+        .confirmation-modal .fa-check-circle {
+            color: var(--green-dark); /* text-green-500 - using theme color */
+            font-size: 3rem; /* text-5xl */
+        }
+        #close-confirmation { /* Style close button like btn-primary */
+             background-color: var(--green-dark);
+             color: white;
+             padding: 0.5rem 1.5rem; /* py-2 px-6 */
+             border-radius: 0.5rem;
+             font-weight: 600;
+             transition: all 0.3s;
+             border: none;
+        }
+        #close-confirmation:hover {
+            background-color: var(--brown-dark);
+            transform: translateY(-2px);
+        }
+        /* Checkout step content styling */
+        .checkout-content h3 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 1rem; /* mb-4 */
+            color: var(--brown-dark);
+        }
+        .checkout-content label {
+            display: block;
+            color: var(--brown-medium);
+            margin-bottom: 0.5rem; /* mb-2 */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500;
+        }
+        .checkout-content .grid {
+            gap: 1.5rem; /* gap-6 */
+        }
+        .checkout-content button { /* Generic button styling within checkout */
+             padding: 0.5rem 1.5rem; /* py-2 px-6 */
+             border-radius: 0.5rem; /* rounded-lg */
+             font-weight: 600;
+             transition: all 0.3s;
+             border: none;
+        }
+        .checkout-content .back-button { /* Specific style for back */
+             background-color: var(--brown-light);
+             color: white;
+        }
+        .checkout-content .back-button:hover {
+             background-color: var(--brown-medium);
+        }
+        .checkout-content .next-button, #complete-order { /* Style next and complete */
+             background-color: var(--green-dark);
+             color: white;
+        }
+        .checkout-content .next-button:hover, #complete-order:hover {
+             background-color: var(--brown-dark);
+             transform: translateY(-2px);
+        }
+
+        /* Payment method selection styling */
+         .payment-method-option {
+             border: 1px solid var(--brown-light);
+             border-radius: 0.5rem;
+             padding: 1rem;
+             cursor: pointer;
+             transition: all 0.3s;
+             background-color: white;
+         }
+         .payment-method-option:hover {
+             background-color: #f9fafb; /* bg-gray-50 */
+             border-color: var(--green-dark);
+         }
+         .payment-method-option input[type="radio"] {
+            margin-top: 0.25rem; /* mt-1 */
+            margin-right: 0.75rem; /* mr-3 */
+            accent-color: var(--green-dark); /* Color the radio button itself */
+         }
+         .payment-method-option .font-semibold {
+             color: var(--brown-dark);
+         }
+         .payment-method-option .text-gray-600 {
+             color: var(--brown-medium);
+         }
+         .payment-details { /* Styling for QR/Bank info boxes */
+             margin-top: 0.5rem; /* mt-2 */
+             padding: 0.75rem; /* p-3 */
+             background-color: #f9fafb; /* bg-gray-100 */
+             border-radius: 0.5rem; /* rounded-lg */
+             font-size: 0.875rem; /* text-sm */
+             color: var(--brown-medium);
+         }
+         .payment-details strong {
+             color: var(--brown-dark);
+         }
+
+         /* Summary Section Styling */
+         #step-4-content .bg-amber-50 { /* Use a lighter theme color */
+             background-color: #F8F1E9; /* Slightly darker than body bg */
+         }
+         #step-4-content h4 {
+             font-weight: 600; /* font-semibold */
+             margin-bottom: 0.5rem; /* mb-2 */
+             color: var(--brown-dark);
+         }
+         #step-4-content .font-medium {
+             font-weight: 500;
+             color: var(--brown-medium);
+         }
+         #step-4-content .text-sm {
+             font-size: 0.875rem;
+             color: #333;
+         }
+         #step-4-content table th {
+            background-color: var(--brown-light);
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1rem; /* py-2 px-4 */
+         }
+         #step-4-content table td {
+            padding: 0.5rem 1rem; /* py-2 px-4 */
+            border-bottom: 1px solid var(--brown-light);
+         }
+         #step-4-content .border-t {
+             border-top: 1px solid var(--brown-light);
+             padding-top: 1rem; /* pt-4 */
+         }
+         #step-4-content span {
+             color: #333;
+         }
+         #step-4-content .font-bold {
+             color: var(--green-dark);
+             font-weight: 700;
+         }
     </style>
 </head>
-<body>
+<body class="text-gray-800"> <!-- Removed bg-gray-50, using body style -->
     <!-- Notification div -->
     <div id="notification" class="notification">
         <span id="notification-message"></span>
     </div>
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full z-10">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="flex items-center">
-                <span class="text-2xl font-bold" style="color: var(--brown-dark);">ÉCLAT CAFÉ</span>
-            </div>
-            <div class="hidden md:flex items-center space-x-8">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full z-50"> <!-- Changed bg to white, added fixed -->
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center"> <!-- px-6 -->
+            <a href="#home" class="text-2xl font-bold flex items-center" id="logo" style="color: var(--brown-dark);">
+                <!-- Removed É color span for simplicity, matching good code's text logo -->
+                ÉCLAT CAFÉ
+            </a>
+            <nav class="hidden md:flex items-center space-x-8"> <!-- space-x-8 -->
                 <a href="#home" class="nav-link">Trang Chủ</a>
                 <a href="#products" class="nav-link">Sản Phẩm</a>
                 <a href="#origin" class="nav-link">Nguồn Gốc</a>
                 <a href="#founders" class="nav-link">Nhà Sáng Lập</a>
                 <a href="#contact" class="nav-link">Liên Hệ</a>
-                <a href="#order" class="btn-primary">Đặt Hàng Ngay</a>
-            </div>
-            <div class="md:hidden">
-                <button class="focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <!-- Combined Cart and Order -->
+                <a href="#order" class="nav-link">Giỏ Hàng</a>
+                 <!-- Login/Register Trigger -->
+                <a href="#" class="nav-link" id="open-auth-modal">Đăng Nhập</a>
+                <a href="#order" class="btn-primary ml-4">Đặt Hàng Ngay</a> <!-- Added order button -->
+            </nav>
+            <button class="md:hidden focus:outline-none" id="menu-toggle" style="color: var(--brown-dark);">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white shadow-lg" id="mobile-menu"> <!-- Changed background -->
+            <div class="container mx-auto px-6 py-2 flex flex-col space-y-1"> <!-- px-6, reduced space-y -->
+                <a href="#home" class="block py-2 px-3 rounded hover:bg-gray-100 nav-link">Trang Chủ</a>
+                <a href="#products" class="block py-2 px-3 rounded hover:bg-gray-100 nav-link">Sản Phẩm</a>
+                <a href="#origin" class="block py-2 px-3 rounded hover:bg-gray-100 nav-link">Nguồn Gốc</a>
+                <a href="#founders" class="block py-2 px-3 rounded hover:bg-gray-100 nav-link">Nhà Sáng Lập</a>
+                <a href="#contact" class="block py-2 px-3 rounded hover:bg-gray-100 nav-link">Liên Hệ</a>
+                <a href="#order" class="block py-2 px-3 rounded hover:bg-gray-100 nav-link">Giỏ Hàng</a>
+                <a href="#" class="block py-2 px-3 rounded hover:bg-gray-100 nav-link" id="open-auth-modal-mobile">Đăng Nhập</a>
+                <a href="#order" class="block py-2 mt-2 text-center btn-primary w-full">Đặt Hàng Ngay</a>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section min-h-screen flex items-center pt-16">
-        <div class="container mx-auto px-6 py-20 text-center">
-            <h1 class="text-5xl font-bold mb-6">Khám Phá Hương Vị Cà Phê Thượng Hạng</h1>
+    <section id="home" class="hero-section min-h-screen flex items-center pt-16"> <!-- pt-16 for fixed nav -->
+        <div class="container mx-auto px-6 py-20 text-center"> <!-- px-6 -->
+             <!-- Removed bg-opacity container, styling applied directly to section -->
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Khám Phá Hương Vị Cà Phê Thượng Hạng</h1>
             <p class="text-xl mb-10 max-w-2xl mx-auto">Éclat Café mang đến những hạt cà phê chất lượng cao từ các vùng trồng nổi tiếng, rang xay theo công thức độc quyền để tạo nên những tách cà phê đậm đà, thơm ngon khó cưỡng.</p>
-            <div class="flex justify-center gap-4">
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#products" class="btn-primary">Khám Phá Sản Phẩm</a>
-                <a href="#origin" class="border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-gray-800 transition duration-300 font-medium">Tìm Hiểu Thêm</a>
+                <a href="#origin" class="btn-secondary">Tìm Hiểu Thêm</a> <!-- Using btn-secondary -->
             </div>
         </div>
     </section>
 
     <!-- Our Products -->
-    <section id="products" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold section-title">Sản Phẩm Của Chúng Tôi</h2>
-            <p class="text-lg mb-12 max-w-3xl" style="color: var(--brown-medium);">Từ hạt cà phê nguyên chất đến các sản phẩm cà phê đặc biệt, chúng tôi có đầy đủ những gì bạn cần để thưởng thức hương vị cà phê đích thực.</p>
-            
+    <section id="products" class="py-20 bg-white"> <!-- py-20 -->
+        <div class="container mx-auto px-6"> <!-- px-6 -->
+            <div class="text-left mb-12"> <!-- Align left like good code -->
+                <h2 class="text-3xl font-bold section-title">Sản Phẩm Của Chúng Tôi</h2>
+                <p class="text-lg mt-12 max-w-3xl" style="color: var(--brown-medium);">Từ hạt cà phê nguyên chất đến các sản phẩm cà phê đặc biệt, chúng tôi có đầy đủ những gì bạn cần để thưởng thức hương vị cà phê đích thực.</p> <!-- Added mt-12 due to absolute positioning of underline -->
+            </div>
+
+            <!-- Using all 12 products from the 'good' code for consistency -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="product-container">
-                <!-- Product 1 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                 <!-- Product 1 -->
+                <div class="product-card">
                     <div class="h-64 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cà Phê Robusta" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
@@ -247,13 +563,12 @@
                         <p class="text-gray-600 mb-4">Hạt cà phê Robusta nguyên chất từ Tây Nguyên, đậm đà với hương vị mạnh mẽ và độ đắng thanh.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold" style="color: var(--green-dark);">180.000đ</span>
-                            <button class="cart-btn" data-id="1" data-name="Cà Phê Robusta Đắk Lắk" data-price="180000" data-image="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
+                            <button class="cart-btn add-to-cart" data-id="1" data-name="Cà Phê Robusta Đắk Lắk" data-price="180000" data-image="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Product 2 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                 <!-- Product 2 -->
+                <div class="product-card">
                     <div class="h-64 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cà Phê Arabica" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
@@ -262,43 +577,40 @@
                         <p class="text-gray-600 mb-4">Hạt cà phê Arabica trồng tại Đà Lạt, hương thơm tinh tế với vị chua nhẹ và hậu vị ngọt.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold" style="color: var(--green-dark);">220.000đ</span>
-                            <button class="cart-btn" data-id="2" data-name="Cà Phê Arabica Cầu Đất" data-price="220000" data-image="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
+                            <button class="cart-btn add-to-cart" data-id="2" data-name="Cà Phê Arabica Cầu Đất" data-price="220000" data-image="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Product 3 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                 <!-- Product 3 -->
+                <div class="product-card">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1565600292430-7c00911e4cc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cà Phê Phin" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <img src="https://lavencoffee.com/data/cms-image/Ca%20phe%20phin%20viet%20nam.jpg" alt="Cà Phê Phin" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
                         <h3 class="font-bold text-xl mb-2" style="color: var(--brown-dark);">Cà Phê Phin Truyền Thống</h3>
                         <p class="text-gray-600 mb-4">Cà phê đã xay sẵn, phù hợp pha phin, hương vị đậm đà theo phong cách cà phê Việt Nam.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold" style="color: var(--green-dark);">150.000đ</span>
-                            <button class="cart-btn" data-id="3" data-name="Cà Phê Phin Truyền Thống" data-price="150000" data-image="https://images.unsplash.com/photo-1565600292430-7c00911e4cc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
+                            <button class="cart-btn add-to-cart" data-id="3" data-name="Cà Phê Phin Truyền Thống" data-price="150000" data-image="https://images.unsplash.com/photo-1565600292430-7c00911e4cc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Product 4 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                 <!-- Product 4 -->
+                <div class="product-card">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1572286258217-215cf8e667f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cà Phê Espresso" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <img src="https://file.hstatic.net/1000075078/article/blog_f80b599183c340bca744c174e7ab2af8.jpg" alt="Cà Phê Espresso" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
                         <h3 class="font-bold text-xl mb-2" style="color: var(--brown-dark);">Cà Phê Espresso Blend</h3>
                         <p class="text-gray-600 mb-4">Blend đặc biệt cho máy Espresso, tạo nên crema dày mịn và hương vị cân bằng hoàn hảo.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold" style="color: var(--green-dark);">250.000đ</span>
-                            <button class="cart-btn" data-id="4" data-name="Cà Phê Espresso Blend" data-price="250000" data-image="https://images.unsplash.com/photo-1572286258217-215cf8e667f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
+                            <button class="cart-btn add-to-cart" data-id="4" data-name="Cà Phê Espresso Blend" data-price="250000" data-image="https://images.unsplash.com/photo-1572286258217-215cf8e667f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Product 5 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                 <!-- Product 5 -->
+                <div class="product-card">
                     <div class="h-64 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cà Phê Moka" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
@@ -307,13 +619,12 @@
                         <p class="text-gray-600 mb-4">Dòng cà phê cao cấp với hương vị socola nhẹ nhàng, hậu vị êm dịu và thơm lâu.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold" style="color: var(--green-dark);">280.000đ</span>
-                            <button class="cart-btn" data-id="5" data-name="Cà Phê Moka Hảo Hạng" data-price="280000" data-image="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
+                            <button class="cart-btn add-to-cart" data-id="5" data-name="Cà Phê Moka Hảo Hạng" data-price="280000" data-image="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Product 6 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                 <!-- Product 6 -->
+                <div class="product-card">
                     <div class="h-64 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cà Phê Catimor" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
@@ -322,13 +633,12 @@
                         <p class="text-gray-600 mb-4">Hương vị đặc trưng vùng cao nguyên Tây Bắc, thơm nồng, đậm đà và hậu vị dễ chịu.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold" style="color: var(--green-dark);">200.000đ</span>
-                            <button class="cart-btn" data-id="6" data-name="Cà Phê Catimor Sơn La" data-price="200000" data-image="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
+                            <button class="cart-btn add-to-cart" data-id="6" data-name="Cà Phê Catimor Sơn La" data-price="200000" data-image="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Product 7 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                 <!-- Product 7 -->
+                <div class="product-card">
                     <div class="h-64 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cà Phê Culi" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
@@ -337,28 +647,26 @@
                         <p class="text-gray-600 mb-4">Hạt cà phê đặc biệt với vị đắng đậm đà, mạnh mẽ, thích hợp cho người yêu thích cà phê nguyên chất.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold" style="color: var(--green-dark);">260.000đ</span>
-                            <button class="cart-btn" data-id="7" data-name="Cà Phê Culi Thượng Hạng" data-price="260000" data-image="https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
+                            <button class="cart-btn add-to-cart" data-id="7" data-name="Cà Phê Culi Thượng Hạng" data-price="260000" data-image="https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Product 8 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                 <!-- Product 8 -->
+                <div class="product-card">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1590080552494-dcda848640e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cà Phê Excelsa" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <img src="https://annacoffee.vn/wp-content/uploads/2024/12/z6129754706992_26b2b91209cca1cad767f536dce739d6.jpg" alt="Cà Phê Excelsa" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
                         <h3 class="font-bold text-xl mb-2" style="color: var(--brown-dark);">Cà Phê Excelsa Đặc Biệt</h3>
                         <p class="text-gray-600 mb-4">Dòng cà phê hiếm có, hương vị trái cây, độ chua nhẹ và thơm lâu, phù hợp pha máy.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold" style="color: var(--green-dark);">300.000đ</span>
-                            <button class="cart-btn" data-id="8" data-name="Cà Phê Excelsa Đặc Biệt" data-price="300000" data-image="https://images.unsplash.com/photo-1590080552494-dcda848640e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
+                            <button class="cart-btn add-to-cart" data-id="8" data-name="Cà Phê Excelsa Đặc Biệt" data-price="300000" data-image="https://images.unsplash.com/photo-1590080552494-dcda848640e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Product 9 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                 <!-- Product 9 -->
+                <div class="product-card">
                     <div class="h-64 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1514066558159-fc8c737ef259?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cà Phê Sữa Đá" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
@@ -367,13 +675,12 @@
                         <p class="text-gray-600 mb-4">Cà phê hoà tan 3in1 với hương vị đậm đà của cà phê Việt Nam truyền thống kết hợp với sữa.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold" style="color: var(--green-dark);">120.000đ</span>
-                            <button class="cart-btn" data-id="9" data-name="Cà Phê Sữa Đá Hòa Tan" data-price="120000" data-image="https://images.unsplash.com/photo-1514066558159-fc8c737ef259?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
+                            <button class="cart-btn add-to-cart" data-id="9" data-name="Cà Phê Sữa Đá Hòa Tan" data-price="120000" data-image="https://images.unsplash.com/photo-1514066558159-fc8c737ef259?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Product 10 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                 <!-- Product 10 -->
+                <div class="product-card">
                     <div class="h-64 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1497636577773-f1231844b336?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cà Phê Cherry" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
@@ -382,68 +689,71 @@
                         <p class="text-gray-600 mb-4">Chế biến từ trái cà phê chín đỏ được sơ chế theo phương pháp honey process, giữ lại vị ngọt tự nhiên.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold" style="color: var(--green-dark);">320.000đ</span>
-                            <button class="cart-btn" data-id="10" data-name="Cà Phê Cherry Đỏ" data-price="320000" data-image="https://images.unsplash.com/photo-1497636577773-f1231844b336?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
+                            <button class="cart-btn add-to-cart" data-id="10" data-name="Cà Phê Cherry Đỏ" data-price="320000" data-image="https://images.unsplash.com/photo-1497636577773-f1231844b336?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Product 11 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                 <!-- Product 11 -->
+                <div class="product-card">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1606791405792-1004f1718d04?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cà Phê Latte" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <img src="https://cdn.tgdd.vn/2021/09/CookProductThumb/Cafe-latte-la-gi-latte-va-cupuchino-co-gi-khac-cac-loai-cach-pha-latte-0b-620x620.jpg" alt="Cà Phê Latte" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
                         <h3 class="font-bold text-xl mb-2" style="color: var(--brown-dark);">Cà Phê Latte Đặc Biệt</h3>
                         <p class="text-gray-600 mb-4">Viên nén cà phê tiện lợi, dễ dàng pha chế cà phê latte tại nhà với hương vị thơm ngon.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold" style="color: var(--green-dark);">230.000đ</span>
-                            <button class="cart-btn" data-id="11" data-name="Cà Phê Latte Đặc Biệt" data-price="230000" data-image="https://images.unsplash.com/photo-1606791405792-1004f1718d04?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
+                            <button class="cart-btn add-to-cart" data-id="11" data-name="Cà Phê Latte Đặc Biệt" data-price="230000" data-image="https://images.unsplash.com/photo-1606791405792-1004f1718d04?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Product 12 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                 <!-- Product 12 -->
+                <div class="product-card">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1580933073521-dc49bba0a53a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cà Phê Cold Brew" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <img src="https://cdn.tgdd.vn/2020/07/CookProductThumb/thumbnew-620x620-11.jpg" alt="Cà Phê Cold Brew" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
                         <h3 class="font-bold text-xl mb-2" style="color: var(--brown-dark);">Cà Phê Cold Brew</h3>
                         <p class="text-gray-600 mb-4">Gói cà phê đặc biệt để pha cold brew, hương vị tinh tế, độ chua dịu và ít đắng hơn.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xl font-bold" style="color: var(--green-dark);">270.000đ</span>
-                            <button class="cart-btn" data-id="12" data-name="Cà Phê Cold Brew" data-price="270000" data-image="https://images.unsplash.com/photo-1580933073521-dc49bba0a53a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
+                            <button class="cart-btn add-to-cart" data-id="12" data-name="Cà Phê Cold Brew" data-price="270000" data-image="https://images.unsplash.com/photo-1580933073521-dc49bba0a53a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Thêm vào giỏ</button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Removed "Xem tất cả" button to match good code's structure -->
         </div>
     </section>
-    
+
     <!-- Coffee Origin -->
-    <section id="origin" class="py-20" style="background-color: #F8F1E9;">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold section-title">Nguồn Gốc Cà Phê</h2>
-            <p class="text-lg mb-12 max-w-3xl" style="color: var(--brown-medium);">Tìm hiểu về hành trình của hạt cà phê từ những đồi núi xa xôi đến tách cà phê thơm ngon trên tay bạn.</p>
-            
+    <section id="origin" class="py-20" style="background-color: #F8F1E9;"> <!-- py-20 -->
+        <div class="container mx-auto px-6"> <!-- px-6 -->
+             <div class="text-left mb-12"> <!-- Align left -->
+                <h2 class="text-3xl font-bold section-title">Nguồn Gốc Cà Phê</h2>
+                <p class="text-lg mt-12 max-w-3xl" style="color: var(--brown-medium);">Tìm hiểu về hành trình của hạt cà phê từ những đồi núi xa xôi đến tách cà phê thơm ngon trên tay bạn.</p>
+            </div>
+
+            <!-- Replicated structure from good code -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <div class="coffee-origin-card p-6 mb-8 bg-white rounded-lg shadow-md">
+                    <div class="coffee-origin-card p-6 mb-8">
                         <h3 class="text-xl font-bold mb-4" style="color: var(--brown-dark);">Vùng Trồng Tây Nguyên</h3>
                         <p class="text-gray-600">Đắk Lắk, Lâm Đồng và các vùng cao nguyên Tây Nguyên là nơi trồng cà phê nổi tiếng của Việt Nam. Với độ cao từ 500-1500m so với mực nước biển, đất bazan màu mỡ và khí hậu lý tưởng, đây là điều kiện hoàn hảo để tạo ra những hạt cà phê chất lượng cao.</p>
                     </div>
-                    
-                    <div class="coffee-origin-card p-6 mb-8 bg-white rounded-lg shadow-md">
+
+                    <div class="coffee-origin-card p-6 mb-8">
                         <h3 class="text-xl font-bold mb-4" style="color: var(--brown-dark);">Quy Trình Thu Hoạch</h3>
                         <p class="text-gray-600">Hạt cà phê được thu hái bằng tay khi quả chín đỏ, đảm bảo chất lượng tốt nhất. Sau khi thu hoạch, quả cà phê được chế biến theo hai phương pháp chính: phương pháp khô truyền thống và phương pháp ướt hiện đại, tùy thuộc vào đặc tính của từng loại hạt.</p>
                     </div>
-                    
-                    <div class="coffee-origin-card p-6 bg-white rounded-lg shadow-md">
+
+                    <div class="coffee-origin-card p-6">
                         <h3 class="text-xl font-bold mb-4" style="color: var(--brown-dark);">Nghệ Thuật Rang Xay</h3>
                         <p class="text-gray-600">Tại Éclat Café, chúng tôi rang hạt theo phương pháp thủ công, kiểm soát nhiệt độ và thời gian một cách tỉ mỉ để đạt được hương vị tối ưu. Mỗi loại hạt sẽ có công thức rang riêng, nhằm tôn trọng và phát huy đặc tính vốn có của từng vùng trồng.</p>
                     </div>
                 </div>
-                
+
                 <div class="relative">
                     <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Coffee Plantation" class="rounded-lg shadow-xl">
                     <div class="absolute -bottom-10 -left-10 p-8 bg-white rounded-lg shadow-lg max-w-xs">
@@ -456,14 +766,17 @@
     </section>
 
     <!-- Founders Section -->
-    <section id="founders" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold section-title">Về Nhà Sáng Lập</h2>
-            <p class="text-lg mb-12 max-w-3xl" style="color: var(--brown-medium);">Gặp gỡ những người đứng sau thành công của Éclat Café - những người tiên phong với niềm đam mê mãnh liệt và tầm nhìn sáng tạo.</p>
-            
+    <section id="founders" class="py-20 bg-white"> <!-- py-20 -->
+        <div class="container mx-auto px-6"> <!-- px-6 -->
+            <div class="text-left mb-12"> <!-- Align left -->
+                <h2 class="text-3xl font-bold section-title">Về Nhà Sáng Lập</h2>
+                 <p class="text-lg mt-12 max-w-3xl" style="color: var(--brown-medium);">Gặp gỡ những người đứng sau thành công của Éclat Café - những người tiên phong với niềm đam mê mãnh liệt và tầm nhìn sáng tạo.</p>
+            </div>
+
+            <!-- Using structure and images from good code -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Founder 1 -->
-                <div class="founders-card bg-white rounded-lg overflow-hidden shadow-md">
+                 <!-- Founder 1 -->
+                <div class="founders-card">
                     <div class="h-80 overflow-hidden">
                         <img src="./daithangdeptrai.jpg" alt="Đại Thắng" class="w-full h-full object-cover">
                     </div>
@@ -478,9 +791,9 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Founder 2 -->
-                <div class="founders-card bg-white rounded-lg overflow-hidden shadow-md">
+
+                 <!-- Founder 2 -->
+                <div class="founders-card">
                     <div class="h-80 overflow-hidden">
                         <img src="./Screenshot 2025-04-05 122233.png" alt="Nguyên Trình" class="w-full h-full object-cover">
                     </div>
@@ -495,9 +808,9 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Founder 3 -->
-                <div class="founders-card bg-white rounded-lg overflow-hidden shadow-md">
+
+                 <!-- Founder 3 -->
+                <div class="founders-card">
                     <div class="h-80 overflow-hidden">
                         <img src="./tailon.png" alt="Tấn Tài" class="w-full h-full object-cover">
                     </div>
@@ -515,230 +828,315 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Order System Section -->
-    <section id="order" class="py-20 bg-white">
+    <section id="order" class="py-20 bg-white"> <!-- Combined Cart/Order section -->
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold section-title">Đặt Hàng Online</h2>
-            <p class="text-lg mb-12 max-w-3xl" style="color: var(--brown-medium);">Đặt hàng trực tuyến dễ dàng, giao hàng tận nơi, thanh toán an toàn với nhiều phương thức.</p>
-            
+            <div class="text-left mb-12">
+                <h2 class="text-3xl font-bold section-title">Đặt Hàng Online</h2>
+                <p class="text-lg mt-12 max-w-3xl" style="color: var(--brown-medium);">Đặt hàng trực tuyến dễ dàng, giao hàng tận nơi, thanh toán an toàn với nhiều phương thức.</p>
+            </div>
+
             <div class="mb-8">
                 <div class="flex border-b border-gray-200">
                     <button id="cartTab" class="py-3 px-6 focus:outline-none rounded-t-lg active-tab">Giỏ Hàng</button>
-                    <button id="orderTab" class="py-3 px-6 focus:outline-none rounded-t-lg">Thông Tin Đặt Hàng</button>
+                    <button id="orderTab" class="py-3 px-6 focus:outline-none rounded-t-lg inactive-tab">Thông Tin Đặt Hàng</button>
                 </div>
             </div>
-            
-            <div id="cartContent" class="bg-white rounded-lg shadow-md p-6">
+
+            <!-- Cart Content (from good code, adapted) -->
+            <div id="cartContent" class="bg-white rounded-b-lg shadow-md p-6">
                 <div class="mb-8">
                     <h3 class="text-2xl font-bold mb-6" style="color: var(--brown-dark);">Giỏ Hàng Của Bạn</h3>
-                    
+
                     <div class="overflow-x-auto">
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead>
-                                <tr>
+                                <tr style="background-color: #F8F1E9;"> <!-- Header background -->
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sản Phẩm</th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Giá</th>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Số Lượng</th>
+                                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Số Lượng</th> <!-- Centered -->
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tổng</th>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Thao Tác</th>
+                                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Thao Tác</th> <!-- Centered -->
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200" id="cartItems">
                                 <!-- Cart items will be dynamically inserted here by JavaScript -->
+                                 <tr><td colspan="5" class="py-6 text-center text-gray-500">Giỏ hàng của bạn đang trống</td></tr>
                             </tbody>
                         </table>
                     </div>
-                    
-                    <div class="mt-8 flex justify-between items-center">
-                        <div>
-                            <button id="updateCart" class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">Cập Nhật Giỏ Hàng</button>
-                        </div>
-                        <div class="text-right">
+
+                    <div class="mt-8 flex flex-col md:flex-row justify-between items-center">
+                        <!-- Removed Update Cart button to match good code's implicit update -->
+                         <div class="md:ml-auto text-right"> <!-- Use ml-auto to push right on medium screens -->
                             <p class="text-xl mb-2">Tổng thanh toán: <span id="cartTotal" class="font-bold" style="color: var(--green-dark);">0đ</span></p>
                             <button id="proceedToCheckout" class="btn-primary">Tiến Hành Đặt Hàng</button>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div id="orderForm" class="bg-white rounded-lg shadow-md p-6">
-                <div class="mb-8">
-                    <h3 class="text-2xl font-bold mb-6" style="color: var(--brown-dark);">Thông Tin Đặt Hàng</h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Order Form Content (Multi-step checkout from ugly code, integrated here) -->
+            <div id="orderForm" class="bg-white rounded-b-lg shadow-md p-6">
+                 <!-- Step 1: Personal Information -->
+                <div class="checkout-content" id="step-1-content">
+                    <h3>Thông Tin Đặt Hàng</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <!-- Adjusted gap -->
                         <div>
-                            <h4 class="text-lg font-semibold mb-4" style="color: var(--brown-dark);">Thông Tin Giao Hàng</h4>
-                            <form id="shippingForm">
-                                <div class="mb-4">
-                                    <label for="fullName" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Họ và tên</label>
-                                    <input type="text" id="fullName" class="form-input w-full" placeholder="Nhập họ và tên của bạn" required>
-                                </div>
-                                
-                                <div class="mb-4">
-                                    <label for="phone" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Số điện thoại</label>
-                                    <input type="tel" id="phone" class="form-input w-full" placeholder="Nhập số điện thoại của bạn" required>
-                                </div>
-                                
-                                <div class="mb-4">
-                                    <label for="email" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Email</label>
-                                    <input type="email" id="email" class="form-input w-full" placeholder="Nhập địa chỉ email của bạn" required>
-                                </div>
-                                
-                                <div class="mb-4">
-                                    <label for="address" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Địa chỉ giao hàng</label>
-                                    <input type="text" id="address" class="form-input w-full" placeholder="Nhập địa chỉ giao hàng" required>
-                                </div>
-                                
-                                <div class="mb-4">
-                                    <label for="city" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Tỉnh/Thành phố</label>
-                                    <select id="city" class="form-input w-full" required>
-                                        <option value="">Chọn Tỉnh/Thành phố</option>
-                                        <option value="HN">Hà Nội</option>
-                                        <option value="HCM">TP. Hồ Chí Minh</option>
-                                        <option value="DN">Đà Nẵng</option>
-                                        <option value="HP">Hải Phòng</option>
-                                        <option value="CT">Cần Thơ</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="mb-4">
-                                    <label for="district" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Quận/Huyện</label>
-                                    <select id="district" class="form-input w-full" required>
-                                        <option value="">Chọn Quận/Huyện</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="mb-4">
-                                    <label for="note" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Ghi chú đơn hàng</label>
-                                    <textarea id="note" rows="3" class="form-input w-full" placeholder="Nhập ghi chú về đơn hàng nếu có"></textarea>
-                                </div>
-                            </form>
+                            <label for="fullname">Họ và tên *</label>
+                            <input type="text" id="fullname" class="form-input" required>
                         </div>
-                        
                         <div>
-                            <h4 class="text-lg font-semibold mb-4" style="color: var(--brown-dark);">Phương Thức Thanh Toán</h4>
-                            
-                            <div class="mb-6">
-                                <div class="flex items-center mb-4">
-                                    <input type="radio" id="cod" name="payment" value="cod" class="mr-2 payment-method" checked>
-                                    <label for="cod" class="text-gray-700">Thanh toán khi nhận hàng (COD)</label>
-                                </div>
-                                
-                                <div class="flex items-center mb-4">
-                                    <input type="radio" id="banking" name="payment" value="banking" class="mr-2 payment-method">
-                                    <label for="banking" class="text-gray-700">Chuyển khoản ngân hàng</label>
-                                </div>
-                                
-                                <!-- QR for Bank Transfer -->
-                                <div id="bankingQR" class="qr-code-container p-4 bg-gray-100 rounded-lg text-center">
-                                    <p class="mb-2 text-sm text-gray-600">Quét mã QR để chuyển khoản:</p>
-                                    <img src="https://cdn.jsdelivr.net/gh/hnh3883/cdn-assets/qr-code-bank.png" alt="Bank Transfer QR Code" class="mx-auto h-48">
-                                    <p class="mt-2 text-sm text-gray-700 font-medium">
-                                        Ngân hàng: Vietcombank<br>
-                                        Số tài khoản: 1023456789<br>
-                                        Chủ tài khoản: ECLAT CAFE JSC
-                                    </p>
-                                </div>
-                                
-                                <div class="flex items-center mb-4">
-                                    <input type="radio" id="momo" name="payment" value="momo" class="mr-2 payment-method">
-                                    <label for="momo" class="text-gray-700">Ví điện tử MoMo</label>
-                                </div>
-                                
-                                <!-- QR for MoMo -->
-                                <div id="momoQR" class="qr-code-container p-4 bg-gray-100 rounded-lg text-center">
-                                    <p class="mb-2 text-sm text-gray-600">Quét mã QR để thanh toán qua MoMo:</p>
-                                    <img src="https://cdn.jsdelivr.net/gh/hnh3883/cdn-assets/qr-code-momo.png" alt="MoMo QR Code" class="mx-auto h-48">
-                                    <p class="mt-2 text-sm text-gray-700 font-medium">
-                                        Số điện thoại: 0876456677<br>
-                                        Tên tài khoản: ECLAT CAFE
-                                    </p>
-                                </div>
-                                
-                                <div class="flex items-center">
-                                    <input type="radio" id="zalopay" name="payment" value="zalopay" class="mr-2 payment-method">
-                                    <label for="zalopay" class="text-gray-700">Ví ZaloPay</label>
-                                </div>
-                                
-                                <!-- QR for ZaloPay -->
-                                <div id="zalopayQR" class="qr-code-container p-4 bg-gray-100 rounded-lg text-center">
-                                    <p class="mb-2 text-sm text-gray-600">Quét mã QR để thanh toán qua ZaloPay:</p>
-                                    <img src="https://cdn.jsdelivr.net/gh/hnh3883/cdn-assets/qr-code-zalopay.png" alt="ZaloPay QR Code" class="mx-auto h-48">
-                                    <p class="mt-2 text-sm text-gray-700 font-medium">
-                                        Số điện thoại: 0876456677<br>
-                                        Tên tài khoản: ECLAT CAFE
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="border-t border-gray-200 py-4 mt-6">
-                                <h4 class="text-lg font-semibold mb-4" style="color: var(--brown-dark);">Tóm Tắt Đơn Hàng</h4>
-                                
-                                <div class="flex justify-between mb-2">
-                                    <span>Tổng tiền hàng:</span>
-                                    <span id="orderSubtotal">0đ</span>
-                                </div>
-                                
-                                <div class="flex justify-between mb-2">
-                                    <span>Phí vận chuyển:</span>
-                                    <span id="shippingFee">30.000đ</span>
-                                </div>
-                                
-                                <div class="flex justify-between font-bold text-lg mt-4" style="color: var(--green-dark);">
-                                    <span>Tổng thanh toán:</span>
-                                    <span id="orderTotal">30.000đ</span>
-                                </div>
-                                
-                                <div class="mt-6">
-                                    <button id="placeOrderBtn" type="button" class="btn-primary w-full">Xác Nhận Đặt Hàng</button>
-                                </div>
-                            </div>
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" class="form-input" required>
                         </div>
+                        <div>
+                            <label for="phone">Số điện thoại *</label>
+                            <input type="tel" id="phone" class="form-input" required>
+                        </div>
+                        <div class="md:col-span-2"> <!-- Span across two columns -->
+                            <label for="notes">Ghi chú</label>
+                            <textarea id="notes" class="form-textarea" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 text-right">
+                        <button id="to-step-2" class="next-button">
+                            Tiếp tục <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Shipping Information -->
+                <div class="checkout-content hidden" id="step-2-content">
+                    <h3>Thông Tin Giao Hàng</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="province">Tỉnh/Thành phố *</label>
+                            <select id="province" class="form-select" required>
+                                <option value="">Chọn Tỉnh/Thành phố</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="district">Quận/Huyện *</label>
+                            <select id="district" class="form-select" required>
+                                <option value="">Chọn Quận/Huyện</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="address">Địa chỉ chi tiết *</label>
+                            <input type="text" id="address" class="form-input" required>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex justify-between">
+                        <button id="back-to-step-1" class="back-button">
+                           <i class="fas fa-arrow-left mr-2"></i> Quay lại
+                        </button>
+                        <button id="to-step-3" class="next-button">
+                            Tiếp tục <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                 <!-- Step 3: Payment Method -->
+                <div class="checkout-content hidden" id="step-3-content">
+                    <h3>Phương Thức Thanh Toán</h3>
+                    <div class="space-y-4">
+                        <!-- COD -->
+                        <div class="payment-method-option">
+                            <label class="flex items-start cursor-pointer">
+                                <input type="radio" name="payment_method" value="cod" class="payment-method" checked>
+                                <div>
+                                    <div class="font-semibold">Thanh toán khi nhận hàng (COD)</div>
+                                    <p class="text-gray-600 text-sm">Bạn sẽ thanh toán bằng tiền mặt khi nhận được hàng</p>
+                                </div>
+                            </label>
+                        </div>
+                        <!-- Bank Transfer -->
+                        <div class="payment-method-option">
+                            <label class="flex items-start cursor-pointer">
+                                <input type="radio" name="payment_method" value="banking" class="payment-method">
+                                <div>
+                                    <div class="font-semibold">Chuyển khoản ngân hàng</div>
+                                    <p class="text-gray-600 text-sm">Thực hiện thanh toán vào ngay tài khoản ngân hàng của chúng tôi</p>
+                                    <!-- QR/Details for Bank Transfer -->
+                                    <div id="bankingQR" class="qr-code-container">
+                                        <p class="mb-2 text-sm text-gray-600">Quét mã QR hoặc chuyển khoản theo thông tin:</p>
+                                        <img src="./qrbank.png" alt="Bank Transfer QR Code">
+                                        <div class="payment-details mt-2"> <!-- Use payment-details class -->
+                                            <p><strong>Ngân hàng:</strong> Vietinbank</p>
+                                            <p><strong>Số tài khoản:</strong> 0876456677</p>
+                                            <p><strong>Chủ tài khoản:</strong> ECLAT CAFE JSC</p>
+                                            <p><strong>Nội dung:</strong> Tên + SĐT đặt hàng</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                         <!-- MoMo -->
+                        <div class="payment-method-option">
+                            <label class="flex items-start cursor-pointer">
+                                <input type="radio" name="payment_method" value="momo" class="payment-method">
+                                <div>
+                                    <div class="font-semibold">Thanh toán qua MoMo</div>
+                                    <p class="text-gray-600 text-sm">Quét mã QR thanh toán nhanh chóng qua ví điện tử MoMo</p>
+                                     <!-- QR/Details for MoMo -->
+                                    <div id="momoQR" class="qr-code-container">
+                                        <p class="mb-2 text-sm text-gray-600">Quét mã QR để thanh toán qua MoMo:</p>
+                                        <img src="./qrmomo.jpg" alt="MoMo QR Code">
+                                        <div class="payment-details mt-2">
+                                            <p><strong>Số điện thoại:</strong> 0876456677</p>
+                                            <p><strong>Tên tài khoản:</strong> ECLAT CAFE</p>
+                                             <p><strong>Nội dung:</strong> Tên + SĐT đặt hàng</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <!-- ZaloPay -->
+                        <div class="payment-method-option">
+                            <label class="flex items-start cursor-pointer">
+                                <input type="radio" name="payment_method" value="zalopay" class="payment-method">
+                                <div>
+                                    <div class="font-semibold">Thanh toán qua ZaloPay</div>
+                                    <p class="text-gray-600 text-sm">Quét mã QR thanh toán nhanh chóng qua ví điện tử ZaloPay</p>
+                                     <!-- QR/Details for ZaloPay -->
+                                    <div id="zalopayQR" class="qr-code-container">
+                                        <p class="mb-2 text-sm text-gray-600">Quét mã QR để thanh toán qua ZaloPay:</p>
+                                        <img src="./qrzalo.png" alt="ZaloPay QR Code">
+                                        <div class="payment-details mt-2">
+                                             <p><strong>Số điện thoại:</strong> 0876456677</p>
+                                            <p><strong>Tên tài khoản:</strong> ECLAT CAFE</p>
+                                            <p><strong>Nội dung:</strong> Tên + SĐT đặt hàng</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex justify-between">
+                        <button id="back-to-step-2" class="back-button">
+                            <i class="fas fa-arrow-left mr-2"></i> Quay lại
+                        </button>
+                        <button id="to-step-4" class="next-button">
+                            Xem lại đơn hàng <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Order Summary -->
+                <div class="checkout-content hidden" id="step-4-content">
+                    <h3>Tóm Tắt Đơn Hàng</h3>
+
+                    <div class="bg-amber-50 p-4 rounded-lg mb-6">
+                        <h4 class="font-semibold mb-2">Thông tin cá nhân:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1 text-sm"> <!-- Reduced gap-y -->
+                            <div><span class="font-medium">Họ tên:</span> <span id="summary-name"></span></div>
+                            <div><span class="font-medium">Email:</span> <span id="summary-email"></span></div>
+                            <div><span class="font-medium">Số điện thoại:</span> <span id="summary-phone"></span></div>
+                            <div class="md:col-span-2"><span class="font-medium">Ghi chú:</span> <span id="summary-notes"></span></div>
+                        </div>
+
+                        <h4 class="font-semibold mt-4 mb-2">Địa chỉ giao hàng:</h4>
+                        <div class="text-sm">
+                            <p><span id="summary-address"></span>, <span id="summary-district"></span>, <span id="summary-province"></span></p>
+                        </div>
+
+                        <h4 class="font-semibold mt-4 mb-2">Phương thức thanh toán:</h4>
+                        <div class="text-sm">
+                            <p id="summary-payment"></p>
+                        </div>
+                    </div>
+
+                    <h4 class="font-semibold mb-2">Sản phẩm đặt hàng:</h4>
+                    <div class="overflow-x-auto mb-4">
+                        <table class="min-w-full border-collapse">
+                            <thead>
+                                <tr> <!-- Removed bg color, using th style -->
+                                    <th class="py-2 px-4 text-left">Sản Phẩm</th>
+                                    <th class="py-2 px-4 text-right">Giá</th>
+                                    <th class="py-2 px-4 text-center">Số Lượng</th>
+                                    <th class="py-2 px-4 text-right">Tổng</th>
+                                </tr>
+                            </thead>
+                            <tbody id="summary-cart-items">
+                                <!-- Summary cart items will be added here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="border-t pt-4">
+                        <div class="flex justify-between mb-2">
+                            <span>Tổng tiền hàng:</span>
+                            <span id="summary-subtotal">0đ</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Phí vận chuyển:</span>
+                            <span id="shippingFee">30.000đ</span> <!-- Consistent ID with good code -->
+                        </div>
+                        <div class="flex justify-between font-bold text-lg mt-4"> <!-- Added mt-4 -->
+                            <span>Tổng thanh toán:</span>
+                            <span id="summary-total">30.000đ</span> <!-- Default with shipping -->
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex justify-between">
+                        <button id="back-to-step-3" class="back-button">
+                             <i class="fas fa-arrow-left mr-2"></i> Quay lại
+                        </button>
+                        <button id="complete-order" class="bg-red-600 hover:bg-red-700 text-white py-2 px-6 rounded-lg font-semibold"> <!-- Make it stand out -->
+                            Xác Nhận Đặt Hàng <i class="fas fa-check ml-2"></i>
+                        </button>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="py-20" style="background-color: #F8F1E9;">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold section-title">Liên Hệ & Đặt Hàng</h2>
-            <p class="text-lg mb-12 max-w-3xl" style="color: var(--brown-medium);">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn với mọi yêu cầu về cà phê. Hãy liên hệ với chúng tôi ngay hôm nay!</p>
-            
+
+     <!-- Contact Section -->
+    <section id="contact" class="py-20" style="background-color: #F8F1E9;"> <!-- py-20 -->
+        <div class="container mx-auto px-6"> <!-- px-6 -->
+             <div class="text-left mb-12"> <!-- Align left -->
+                <h2 class="text-3xl font-bold section-title">Liên Hệ & Đặt Hàng</h2>
+                <p class="text-lg mt-12 max-w-3xl" style="color: var(--brown-medium);">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn với mọi yêu cầu về cà phê. Hãy liên hệ với chúng tôi ngay hôm nay!</p>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
                     <h3 class="text-2xl font-bold mb-6" style="color: var(--brown-dark);">Gửi Thông Tin</h3>
-                    <form id="contactForm">
-                        <div class="mb-6">
-                            <label for="name" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Họ và tên</label>
-                            <input type="text" id="name" class="form-input w-full" placeholder="Nhập họ và tên của bạn">
+                    <form id="contactForm"> <!-- Added ID for JS -->
+                        <div class="mb-6"> <!-- Increased margin -->
+                            <label for="contact-name" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Họ và tên</label>
+                            <input type="text" id="contact-name" class="form-input w-full" placeholder="Nhập họ và tên của bạn" required> <!-- Added required -->
                         </div>
-                        
+
                         <div class="mb-6">
-                            <label for="contactEmail" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Email</label>
-                            <input type="email" id="contactEmail" class="form-input w-full" placeholder="Nhập địa chỉ email của bạn">
+                            <label for="contact-email" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Email</label>
+                            <input type="email" id="contact-email" class="form-input w-full" placeholder="Nhập địa chỉ email của bạn" required> <!-- Added required -->
                         </div>
-                        
+
                         <div class="mb-6">
-                            <label for="contactPhone" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Số điện thoại</label>
-                            <input type="tel" id="contactPhone" class="form-input w-full" placeholder="Nhập số điện thoại của bạn">
+                            <label for="contact-phone" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Số điện thoại</label>
+                            <input type="tel" id="contact-phone" class="form-input w-full" placeholder="Nhập số điện thoại của bạn">
                         </div>
-                        
+
                         <div class="mb-6">
-                            <label for="message" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Tin nhắn</label>
-                            <textarea id="message" rows="4" class="form-input w-full" placeholder="Nhập nội dung tin nhắn của bạn"></textarea>
+                            <label for="contact-message" class="block text-sm font-medium mb-2" style="color: var(--brown-medium);">Tin nhắn</label>
+                            <textarea id="contact-message" rows="4" class="form-textarea w-full" placeholder="Nhập nội dung tin nhắn của bạn" required></textarea> <!-- Added required -->
                         </div>
-                        
+
                         <button type="submit" class="btn-primary w-full">Gửi Tin Nhắn</button>
                     </form>
                 </div>
-                
+
                 <div>
                     <h3 class="text-2xl font-bold mb-6" style="color: var(--brown-dark);">Thông Tin Liên Hệ</h3>
-                    
-                    <div class="mb-8">
+                     <!-- Using structure from good code -->
+                     <div class="mb-8">
                         <h4 class="text-lg font-semibold mb-4" style="color: var(--green-dark);">Địa Chỉ Cửa Hàng</h4>
                         <p class="mb-2 flex items-start">
                             <span class="mr-3 text-xl" style="color: var(--brown-dark);"><i class="fas fa-map-marker-alt"></i></span>
@@ -746,20 +1144,20 @@
                         </p>
                         <p class="mb-2 flex items-start">
                             <span class="mr-3 text-xl" style="color: var(--brown-dark);"><i class="fas fa-phone"></i></span>
-                            <span>0876456677</span>
+                            <a href="tel:0876456677" class="hover:text-green-700">0876456677</a>
                         </p>
                         <p class="flex items-start">
                             <span class="mr-3 text-xl" style="color: var(--brown-dark);"><i class="fas fa-envelope"></i></span>
-                            <span>info@eclatcafe.vn</span>
+                             <a href="mailto:info@eclatcafe.vn" class="hover:text-green-700">info@eclatcafe.vn</a>
                         </p>
                     </div>
-                    
+
                     <div class="mb-8">
                         <h4 class="text-lg font-semibold mb-4" style="color: var(--green-dark);">Giờ Mở Cửa</h4>
                         <p class="mb-2">Thứ Hai - Thứ Sáu: 7:00 - 21:00</p>
                         <p class="mb-2">Thứ Bảy - Chủ Nhật: 8:00 - 22:00</p>
                     </div>
-                    
+
                     <div>
                         <h4 class="text-lg font-semibold mb-4" style="color: var(--green-dark);">Theo Dõi Chúng Tôi</h4>
                         <div class="flex space-x-4">
@@ -775,23 +1173,30 @@
                             <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110" style="background-color: var(--brown-dark);">
                                 <i class="fab fa-youtube"></i>
                             </a>
+                            <!-- Removed TikTok to match good code -->
                         </div>
+                    </div>
+                    <!-- Keeping the map -->
+                     <div class="mt-8">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3952669068315!2d106.70131491534771!3d10.77698946214412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f47a66ae877%3A0xb17350d6a27ffe91!2zMTIzIE5ndXnhu4VuIEh14buHLCBC4bq_biBOZ2jDqSwgUXXhuq1uIDEsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1629774772264!5m2!1sen!2s"
+                            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg shadow-md"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
-    <footer class="py-10 text-white" style="background-color: var(--brown-dark);">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer class="py-10 text-white" style="background-color: var(--brown-dark);"> <!-- py-10 -->
+        <div class="container mx-auto px-6"> <!-- px-6 -->
+            <!-- Replicated structure from good code -->
+             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">ÉCLAT CAFÉ</h3>
                     <p class="mb-4 text-gray-300">Mang đến hương vị cà phê đích thực cho người yêu cà phê Việt Nam.</p>
                     <p class="text-gray-300">© 2023 Éclat Café. Tất cả quyền được bảo lưu.</p>
                 </div>
-                
+
                 <div>
                     <h3 class="text-xl font-bold mb-4">Liên Kết Nhanh</h3>
                     <ul class="space-y-2">
@@ -803,7 +1208,7 @@
                         <li><a href="#order" class="text-gray-300 hover:text-white transition duration-300">Đặt Hàng</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="text-xl font-bold mb-4">Chính Sách</h3>
                     <ul class="space-y-2">
@@ -813,12 +1218,13 @@
                         <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Chính Sách Đổi Trả</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="text-xl font-bold mb-4">Đăng Ký Nhận Tin</h3>
                     <p class="mb-4 text-gray-300">Nhận thông tin khuyến mãi và cập nhật mới nhất từ chúng tôi.</p>
                     <form class="flex">
-                        <input type="email" placeholder="Email của bạn" class="px-4 py-2 rounded-l-lg focus:outline-none w-full">
+                         <!-- Changed input styling -->
+                        <input type="email" placeholder="Email của bạn" class="px-4 py-2 rounded-l-lg focus:outline-none w-full text-gray-800">
                         <button type="submit" class="px-4 py-2 rounded-r-lg text-white font-medium" style="background-color: var(--green-dark);">Đăng Ký</button>
                     </form>
                 </div>
@@ -826,100 +1232,238 @@
         </div>
     </footer>
 
+    <!-- User Authentication Modal -->
+    <div id="auth-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="auth-modal"> <!-- Applied class -->
+            <div class="flex border-b">
+                <div id="login-tab" class="auth-tab auth-tab-active">Đăng Nhập</div>
+                <div id="register-tab" class="auth-tab">Đăng Ký</div>
+                <button id="close-auth-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-form" class="p-6">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2" style="color: var(--brown-medium);" for="login-email">Email *</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium mb-2" style="color: var(--brown-medium);" for="login-password">Mật khẩu *</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <div class="flex items-center justify-between mb-6">
+                    <label class="flex items-center">
+                        <input type="checkbox" class="mr-2" style="accent-color: var(--green-dark);">
+                        <span class="text-sm" style="color: var(--brown-medium);">Ghi nhớ đăng nhập</span>
+                    </label>
+                    <a href="#" class="text-sm">Quên mật khẩu?</a>
+                </div>
+                <button id="login-button">Đăng nhập</button>
+
+                <div class="mt-6 text-center">
+                    <p class="text-sm" style="color: var(--brown-medium);">Hoặc đăng nhập với</p>
+                    <div class="flex justify-center mt-3 space-x-4">
+                        <a href="#" class="text-blue-600 hover:text-blue-800">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-red-600 hover:text-red-800">
+                            <i class="fab fa-google text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Register Form -->
+            <div id="register-form" class="p-6 hidden">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2" style="color: var(--brown-medium);" for="register-name">Họ và tên *</label>
+                    <input type="text" id="register-name" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2" style="color: var(--brown-medium);" for="register-email">Email *</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2" style="color: var(--brown-medium);" for="register-phone">Số điện thoại *</label>
+                    <input type="tel" id="register-phone" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2" style="color: var(--brown-medium);" for="register-password">Mật khẩu *</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium mb-2" style="color: var(--brown-medium);" for="confirm-password">Xác nhận mật khẩu *</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                <div class="mb-6">
+                    <label class="flex items-center">
+                        <input type="checkbox" class="mr-2" style="accent-color: var(--green-dark);" required>
+                        <span class="text-sm" style="color: var(--brown-medium);">Tôi đồng ý với <a href="#">điều khoản sử dụng</a> và <a href="#">chính sách bảo mật</a></span>
+                    </label>
+                </div>
+                <button id="register-button">Đăng ký</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div id="order-confirmation-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] flex items-center justify-center hidden"> <!-- Increased z-index -->
+        <div class="confirmation-modal"> <!-- Applied class -->
+            <div class="text-center">
+                <div class="mb-4">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2" style="color: var(--brown-dark);">Đặt Hàng Thành Công!</h3>
+                <p class="mb-6" style="color: var(--brown-medium);">Cảm ơn bạn đã đặt hàng tại Éclat Café. Chúng tôi sẽ liên hệ xác nhận đơn hàng trong thời gian sớm nhất.</p>
+                <div style="background-color: #F8F1E9;" class="p-4 rounded-lg text-left mb-6 text-sm">
+                    <p class="font-semibold" style="color: var(--brown-dark);">Mã đơn hàng: <span id="order-code" class="font-normal" style="color: #333;"></span></p>
+                    <p class="font-semibold" style="color: var(--brown-dark);">Tổng giá trị: <span id="order-total-confirm" class="font-normal" style="color: #333;"></span></p>
+                    <p class="font-semibold" style="color: var(--brown-dark);">Phương thức thanh toán: <span id="order-payment-confirm" class="font-normal" style="color: #333;"></span></p>
+                </div>
+                <button id="close-confirmation">
+                    Tiếp tục mua sắm
+                </button>
+            </div>
+        </div>
+    </div>
+
+
     <script>
-        // Cart functionality
+        // Vietnamese Provinces and Districts (Keep as is)
+        const vietnamLocations = {
+             provinces: [
+                "Hà Nội", "TP. Hồ Chí Minh", "Đà Nẵng", "Hải Phòng", "Cần Thơ",
+                "An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu",
+                "Bắc Ninh", "Bến Tre", "Bình Định", "Bình Dương", "Bình Phước",
+                "Bình Thuận", "Cà Mau", "Cao Bằng", "Đắk Lắk", "Đắk Nông",
+                "Điện Biên", "Đồng Nai", "Đồng Tháp", "Gia Lai", "Hà Giang",
+                "Hà Nam", "Hà Tĩnh", "Hải Dương", "Hậu Giang", "Hòa Bình",
+                "Hưng Yên", "Khánh Hòa", "Kiên Giang", "Kon Tum", "Lai Châu",
+                "Lâm Đồng", "Lạng Sơn", "Lào Cai", "Long An", "Nam Định",
+                "Nghệ An", "Ninh Bình", "Ninh Thuận", "Phú Thọ", "Phú Yên",
+                "Quảng Bình", "Quảng Nam", "Quảng Ngãi", "Quảng Ninh", "Quảng Trị",
+                "Sóc Trăng", "Sơn La", "Tây Ninh", "Thái Bình", "Thái Nguyên",
+                "Thanh Hóa", "Thừa Thiên Huế", "Tiền Giang", "Trà Vinh", "Tuyên Quang",
+                "Vĩnh Long", "Vĩnh Phúc", "Yên Bái"
+            ],
+            districts: {
+                "Hà Nội": ["Ba Đình", "Hoàn Kiếm", "Hai Bà Trưng", "Đống Đa", "Tây Hồ", "Cầu Giấy", "Thanh Xuân", "Hoàng Mai", "Long Biên", "Bắc Từ Liêm", "Nam Từ Liêm", "Hà Đông", "Sơn Tây", "Ba Vì", "Chương Mỹ", "Đan Phượng", "Đông Anh", "Gia Lâm", "Hoài Đức", "Mê Linh", "Mỹ Đức", "Phú Xuyên", "Phúc Thọ", "Quốc Oai", "Sóc Sơn", "Thạch Thất", "Thanh Oai", "Thanh Trì", "Thường Tín", "Ứng Hòa"],
+                "TP. Hồ Chí Minh": ["Quận 1", "Quận 3", "Quận 4", "Quận 5", "Quận 6", "Quận 7", "Quận 8", "Quận 10", "Quận 11", "Quận 12", "Bình Tân", "Bình Thạnh", "Gò Vấp", "Phú Nhuận", "Tân Bình", "Tân Phú", "Thủ Đức", "Bình Chánh", "Cần Giờ", "Củ Chi", "Hóc Môn", "Nhà Bè"], // Removed Q2, Q9 merged into Thu Duc conceptually
+                "Đà Nẵng": ["Hải Châu", "Thanh Khê", "Sơn Trà", "Ngũ Hành Sơn", "Liên Chiểu", "Cẩm Lệ", "Hòa Vang"],
+                "Hải Phòng": ["Hồng Bàng", "Lê Chân", "Ngô Quyền", "Kiến An", "Hải An", "Đồ Sơn", "Dương Kinh", "An Dương", "An Lão", "Bạch Long Vĩ", "Cát Hải", "Kiến Thụy", "Thủy Nguyên", "Tiên Lãng", "Vĩnh Bảo"],
+                "Cần Thơ": ["Ninh Kiều", "Bình Thủy", "Cái Răng", "Ô Môn", "Thốt Nốt", "Cờ Đỏ", "Phong Điền", "Thới Lai", "Vĩnh Thạnh"],
+                // Add other provinces and districts as needed...
+            }
+        };
+
+        // Cart functionality (Using the 'good' code's object structure)
         const cart = {
             items: [],
-            
+
             addItem(id, name, price, image, quantity = 1) {
                 const existingItem = this.items.find(item => item.id === id);
-                
+
                 if (existingItem) {
                     existingItem.quantity += quantity;
                 } else {
-                    this.items.push({
-                        id,
-                        name,
-                        price,
-                        image,
-                        quantity
-                    });
+                     // Add image property
+                    this.items.push({ id, name, price, image, quantity });
                 }
-                
+
                 this.saveCart();
                 this.updateCartUI();
                 this.showNotification(`${name} đã được thêm vào giỏ hàng!`);
             },
-            
+
             removeItem(id) {
                 const index = this.items.findIndex(item => item.id === id);
                 if (index !== -1) {
-                    const removedItem = this.items[index];
+                    const removedItemName = this.items[index].name; // Get name before removing
                     this.items.splice(index, 1);
                     this.saveCart();
                     this.updateCartUI();
-                    this.showNotification(`${removedItem.name} đã được xóa khỏi giỏ hàng!`);
+                    this.showNotification(`${removedItemName} đã được xóa khỏi giỏ hàng.`);
                 }
             },
-            
+
             updateQuantity(id, quantity) {
                 const item = this.items.find(item => item.id === id);
                 if (item) {
-                    item.quantity = quantity > 0 ? quantity : 1;
+                    item.quantity = Math.max(1, quantity); // Ensure quantity is at least 1
                     this.saveCart();
                     this.updateCartUI();
+                    // No notification on quantity update to avoid annoyance
                 }
             },
-            
+
             clearCart() {
                 this.items = [];
                 this.saveCart();
                 this.updateCartUI();
-                this.showNotification("Giỏ hàng đã được làm trống!");
+                // Notification shown by completeOrder function
             },
-            
+
             getTotal() {
                 return this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
             },
-            
+
             saveCart() {
                 localStorage.setItem('eclatCart', JSON.stringify(this.items));
             },
-            
+
             loadCart() {
                 const savedCart = localStorage.getItem('eclatCart');
                 if (savedCart) {
                     this.items = JSON.parse(savedCart);
+                    // Ensure loaded items have all properties (like image) if added later
+                    this.items.forEach(item => {
+                        if (!item.image) {
+                             // Try to find image from product list (or use a placeholder)
+                            const productButton = document.querySelector(`.add-to-cart[data-id="${item.id}"]`);
+                            item.image = productButton ? productButton.dataset.image : 'placeholder.jpg'; // Add a placeholder image URL if needed
+                        }
+                    });
                     this.updateCartUI();
                 }
             },
-            
+
             updateCartUI() {
                 const cartItemsContainer = document.getElementById('cartItems');
-                const cartTotal = document.getElementById('cartTotal');
-                const orderSubtotal = document.getElementById('orderSubtotal');
-                const orderTotal = document.getElementById('orderTotal');
-                
-                if (!cartItemsContainer) return;
-                
-                cartItemsContainer.innerHTML = '';
-                
+                const cartTotalEl = document.getElementById('cartTotal'); // Renamed from cartTotalElement
+                const summaryCartItemsContainer = document.getElementById('summary-cart-items');
+                const summarySubtotalEl = document.getElementById('summary-subtotal'); // Renamed
+                const summaryTotalEl = document.getElementById('summary-total'); // Renamed
+                const shippingFeeEl = document.getElementById('shippingFee'); // Get shipping fee element
+
+                if (!cartItemsContainer || !summaryCartItemsContainer) return;
+
+                cartItemsContainer.innerHTML = ''; // Clear main cart view
+                summaryCartItemsContainer.innerHTML = ''; // Clear summary cart view
+
                 if (this.items.length === 0) {
-                    cartItemsContainer.innerHTML = `
+                    const emptyRow = `
                         <tr>
                             <td colspan="5" class="px-6 py-10 text-center text-gray-500">
-                                Giỏ hàng của bạn đang trống. Hãy thêm sản phẩm vào giỏ hàng!
+                                Giỏ hàng của bạn đang trống.
                             </td>
-                        </tr>
-                    `;
+                        </tr>`;
+                    cartItemsContainer.innerHTML = emptyRow;
+                    summaryCartItemsContainer.innerHTML = emptyRow; // Also show in summary
                 } else {
                     this.items.forEach(item => {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `
+                         // Ensure item.image has a value
+                         const imageUrl = item.image || 'placeholder.jpg'; // Use placeholder if image is missing
+                         const itemTotal = item.price * item.quantity;
+
+                        // Row for main cart view
+                        const cartRow = document.createElement('tr');
+                        cartRow.innerHTML = `
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
                                     <div class="h-10 w-10 flex-shrink-0">
-                                        <img class="h-10 w-10 rounded-full" src="${item.image}" alt="${item.name}">
+                                        <img class="h-10 w-10 rounded-full object-cover" src="${imageUrl}" alt="${item.name}">
                                     </div>
                                     <div class="ml-4">
                                         <div class="text-sm font-medium text-gray-900">${item.name}</div>
@@ -927,197 +1471,338 @@
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-900">${formatPrice(item.price)}</div>
+                                <div class="text-sm text-gray-900">${formatCurrency(item.price)}</div>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <span class="quantity-btn decrease-btn" data-id="${item.id}">-</span>
-                                    <input type="number" value="${item.quantity}" min="1" class="w-12 text-center py-1 border-t border-b border-gray-200 quantity-input" data-id="${item.id}">
-                                    <span class="quantity-btn increase-btn" data-id="${item.id}">+</span>
+                            <td class="px-6 py-4 whitespace-nowrap text-center"> <!-- Centered quantity -->
+                                <div class="flex items-center justify-center">
+                                    <button class="quantity-btn decrease-quantity" data-id="${item.id}">-</button>
+                                    <input type="number" value="${item.quantity}" min="1" class="quantity-input" data-id="${item.id}">
+                                    <button class="quantity-btn increase-quantity" data-id="${item.id}">+</button>
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-900">${formatPrice(item.price * item.quantity)}</div>
+                                <div class="text-sm text-gray-900">${formatCurrency(itemTotal)}</div>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <button class="text-red-600 hover:text-red-900 remove-item" data-id="${item.id}">Xóa</button>
+                            <td class="px-6 py-4 whitespace-nowrap text-center"> <!-- Centered remove button -->
+                                <button class="text-red-600 hover:text-red-900 remove-item" data-id="${item.id}">
+                                     <i class="fas fa-trash-alt"></i>
+                                </button>
                             </td>
                         `;
-                        cartItemsContainer.appendChild(row);
+                        cartItemsContainer.appendChild(cartRow);
+
+                        // Row for summary view (Step 4)
+                        const summaryRow = document.createElement('tr');
+                         summaryRow.innerHTML = `
+                            <td class="py-2 px-4 border-b">${item.name}</td>
+                            <td class="py-2 px-4 border-b text-right">${formatCurrency(item.price)}</td>
+                            <td class="py-2 px-4 border-b text-center">${item.quantity}</td>
+                            <td class="py-2 px-4 border-b text-right">${formatCurrency(itemTotal)}</td>
+                         `;
+                         summaryCartItemsContainer.appendChild(summaryRow);
                     });
                 }
-                
-                const total = this.getTotal();
-                cartTotal.textContent = formatPrice(total);
-                orderSubtotal.textContent = formatPrice(total);
-                
-                // Update order total (subtotal + shipping)
-                const shippingFee = parseInt(document.getElementById('shippingFee').textContent.replace(/\D/g, '')) || 30000;
-                orderTotal.textContent = formatPrice(total + shippingFee);
-                
-                // Add event listeners for quantity buttons and remove buttons
-                document.querySelectorAll('.decrease-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const id = btn.dataset.id;
-                        const item = this.items.find(item => item.id === id);
-                        if (item && item.quantity > 1) {
-                            this.updateQuantity(id, item.quantity - 1);
-                        }
-                    });
-                });
-                
-                document.querySelectorAll('.increase-btn').forEach(btn => {
+
+                const subtotal = this.getTotal();
+                const shippingFee = parseInt(shippingFeeEl.textContent.replace(/\D/g, '')) || 30000;
+                const total = subtotal + shippingFee;
+
+                cartTotalEl.textContent = formatCurrency(subtotal); // Main cart shows subtotal
+                summarySubtotalEl.textContent = formatCurrency(subtotal);
+                summaryTotalEl.textContent = formatCurrency(total);
+
+                // Re-attach event listeners for quantity and remove buttons
+                this.attachCartActionListeners();
+            },
+
+             attachCartActionListeners() {
+                 // Remove existing listeners to prevent duplicates (optional but good practice)
+                 document.querySelectorAll('.decrease-quantity, .increase-quantity, .quantity-input, .remove-item').forEach(el => {
+                     el.replaceWith(el.cloneNode(true)); // Simple way to remove listeners
+                 });
+
+                 // Add event listeners for quantity buttons
+                document.querySelectorAll('.decrease-quantity').forEach(btn => {
                     btn.addEventListener('click', () => {
                         const id = btn.dataset.id;
                         const item = this.items.find(item => item.id === id);
                         if (item) {
-                            this.updateQuantity(id, item.quantity + 1);
+                            this.updateQuantity(id, item.quantity - 1);
                         }
                     });
                 });
-                
-                document.querySelectorAll('.quantity-input').forEach(input => {
-                    input.addEventListener('change', () => {
-                        const id = input.dataset.id;
-                        const quantity = parseInt(input.value) || 1;
-                        this.updateQuantity(id, quantity);
+
+                document.querySelectorAll('.increase-quantity').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.dataset.id;
+                        this.updateQuantity(id, this.items.find(item => item.id === id).quantity + 1);
                     });
                 });
-                
+
+                 // Listener for quantity input change
+                 document.querySelectorAll('.quantity-input').forEach(input => {
+                    input.addEventListener('change', () => {
+                        const id = input.dataset.id;
+                        const quantity = parseInt(input.value) || 1; // Default to 1 if invalid
+                        this.updateQuantity(id, quantity);
+                    });
+                    // Prevent non-numeric input
+                     input.addEventListener('input', () => {
+                         input.value = input.value.replace(/[^0-9]/g, '');
+                     });
+                });
+
+
+                // Add event listeners for remove buttons
                 document.querySelectorAll('.remove-item').forEach(btn => {
                     btn.addEventListener('click', () => {
                         const id = btn.dataset.id;
                         this.removeItem(id);
                     });
                 });
-            },
-            
+             },
+
+
             showNotification(message) {
                 const notification = document.getElementById('notification');
                 const notificationMessage = document.getElementById('notification-message');
-                
+
+                if (!notification || !notificationMessage) return; // Guard clause
+
                 notificationMessage.textContent = message;
                 notification.classList.add('show');
-                
+
+                // Automatically hide after 3 seconds
                 setTimeout(() => {
                     notification.classList.remove('show');
                 }, 3000);
             }
         };
-        
-        // Format price function
-        function formatPrice(price) {
-            return new Intl.NumberFormat('vi-VN', {
-                style: 'decimal',
-                maximumFractionDigits: 0
-            }).format(price) + 'đ';
+
+        // Format currency function
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount).replace(/\s/g, '');
+            // return new Intl.NumberFormat('vi-VN').format(amount) + 'đ'; // Alternative simpler format
         }
-        
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                 // Let the auth modal links behave normally
+                 if (this.closest('#auth-modal')) {
+                    return;
+                 }
+                 // Also allow footer policy links etc. to behave normally if needed
+                 if (!document.querySelector(this.getAttribute('href'))) {
+                     return; // Don't prevent default if target doesn't exist on page
+                 }
+
                 e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Calculate offset based on fixed header height (approx 60-70px)
+                    const headerOffset = 70;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
             });
         });
-        
+
         // Tab switching for order section
         const cartTab = document.getElementById('cartTab');
         const orderTab = document.getElementById('orderTab');
         const cartContent = document.getElementById('cartContent');
         const orderForm = document.getElementById('orderForm');
         const proceedToCheckout = document.getElementById('proceedToCheckout');
-        
+
         cartTab.addEventListener('click', function() {
             cartContent.style.display = 'block';
             orderForm.style.display = 'none';
             cartTab.classList.add('active-tab');
+            cartTab.classList.remove('inactive-tab');
             orderTab.classList.remove('active-tab');
+            orderTab.classList.add('inactive-tab');
         });
-        
+
         orderTab.addEventListener('click', function() {
+            // Only allow switching to order form if cart is not empty
+             if (cart.items.length === 0) {
+                cart.showNotification('Giỏ hàng của bạn đang trống!');
+                return; // Don't switch tab
+             }
             cartContent.style.display = 'none';
             orderForm.style.display = 'block';
             orderTab.classList.add('active-tab');
+            orderTab.classList.remove('inactive-tab');
             cartTab.classList.remove('active-tab');
+            cartTab.classList.add('inactive-tab');
+            showStep(1); // Ensure Step 1 is shown when switching to order form
         });
-        
+
         proceedToCheckout.addEventListener('click', function() {
             if (cart.items.length === 0) {
                 cart.showNotification('Giỏ hàng của bạn đang trống!');
                 return;
             }
-            
+
+            // Switch to Order Tab and Form
             cartContent.style.display = 'none';
             orderForm.style.display = 'block';
             orderTab.classList.add('active-tab');
+            orderTab.classList.remove('inactive-tab');
             cartTab.classList.remove('active-tab');
+            cartTab.classList.add('inactive-tab');
+            showStep(1); // Start at step 1
         });
-        
+
         // Add to cart button functionality
-        document.querySelectorAll('.cart-btn').forEach(button => {
+        document.querySelectorAll('.add-to-cart').forEach(button => {
             button.addEventListener('click', function() {
                 const id = this.dataset.id;
                 const name = this.dataset.name;
                 const price = parseInt(this.dataset.price);
-                const image = this.dataset.image;
-                
+                const image = this.dataset.image; // Get image from data attribute
+
                 cart.addItem(id, name, price, image);
             });
         });
-        
-        // Update cart button
-        document.getElementById('updateCart').addEventListener('click', function() {
-            cart.updateCartUI();
-            cart.showNotification('Giỏ hàng đã được cập nhật!');
+
+
+        // --- Checkout Steps Logic (from ugly code, adapted) ---
+
+        // Add provinces to dropdown
+        const provinceSelect = document.getElementById('province');
+        vietnamLocations.provinces.forEach(province => {
+            const option = document.createElement('option');
+            option.value = province;
+            option.textContent = province;
+            provinceSelect.appendChild(option);
         });
-        
-        // Place order button
-        document.getElementById('placeOrderBtn').addEventListener('click', function() {
-            const form = document.getElementById('shippingForm');
-            
-            // Perform basic validation
-            const requiredFields = form.querySelectorAll('[required]');
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.classList.add('border-red-500');
-                } else {
-                    field.classList.remove('border-red-500');
-                }
+
+        // Update districts when province changes
+        provinceSelect.addEventListener('change', function() {
+            const districtSelect = document.getElementById('district');
+            // Clear current options
+            districtSelect.innerHTML = '<option value="">Chọn Quận/Huyện</option>';
+
+            const selectedProvince = this.value;
+            if (selectedProvince && vietnamLocations.districts[selectedProvince]) {
+                vietnamLocations.districts[selectedProvince].forEach(district => {
+                    const option = document.createElement('option');
+                    option.value = district;
+                    option.textContent = district;
+                    districtSelect.appendChild(option);
+                });
+                districtSelect.disabled = false; // Enable district select
+            } else {
+                 districtSelect.disabled = true; // Disable if no province or districts
+            }
+        });
+         // Initial state for district dropdown
+         document.getElementById('district').disabled = true;
+
+
+        // Checkout steps navigation
+        const checkoutContents = document.querySelectorAll('.checkout-content');
+
+        function showStep(stepNumber) {
+            // Hide all content sections
+            checkoutContents.forEach(content => {
+                content.classList.add('hidden');
             });
-            
-            if (!isValid) {
-                cart.showNotification('Vui lòng điền đầy đủ thông tin giao hàng!');
-                return;
+
+            // Show the selected step content
+            const currentStepContent = document.getElementById(`step-${stepNumber}-content`);
+            if (currentStepContent) {
+                currentStepContent.classList.remove('hidden');
+            } else {
+                console.error(`Checkout step content ${stepNumber} not found.`);
             }
-            
-            if (cart.items.length === 0) {
-                cart.showNotification('Giỏ hàng của bạn đang trống!');
-                return;
+        }
+
+        function validateStep(stepNumber) {
+            let isValid = true;
+             // Clear previous errors
+             document.querySelectorAll(`#step-${stepNumber}-content [required]`).forEach(el => {
+                 el.classList.remove('border-red-500'); // Assuming red border for errors
+             });
+
+            if (stepNumber === 1) {
+                const fullname = document.getElementById('fullname');
+                const email = document.getElementById('email');
+                const phone = document.getElementById('phone');
+                if (!fullname.value.trim()) { isValid = false; fullname.classList.add('border-red-500'); }
+                if (!email.value.trim() || !/^\S+@\S+\.\S+$/.test(email.value)) { isValid = false; email.classList.add('border-red-500'); } // Basic email format check
+                if (!phone.value.trim() || !/^\d{10,}$/.test(phone.value)) { isValid = false; phone.classList.add('border-red-500'); } // Basic phone format check (10+ digits)
+                if (!isValid) cart.showNotification('Vui lòng kiểm tra lại thông tin cá nhân.');
+            } else if (stepNumber === 2) {
+                const province = document.getElementById('province');
+                const district = document.getElementById('district');
+                const address = document.getElementById('address');
+                 if (!province.value) { isValid = false; province.classList.add('border-red-500'); }
+                 if (!district.value || district.disabled) { isValid = false; district.classList.add('border-red-500'); }
+                 if (!address.value.trim()) { isValid = false; address.classList.add('border-red-500'); }
+                 if (!isValid) cart.showNotification('Vui lòng điền đầy đủ địa chỉ giao hàng.');
+            } else if (stepNumber === 3) {
+                 const paymentMethod = document.querySelector('input[name="payment_method"]:checked');
+                 if (!paymentMethod) {
+                     isValid = false;
+                     cart.showNotification('Vui lòng chọn phương thức thanh toán.');
+                     // Optionally highlight the payment section somehow
+                 }
             }
-            
-            // Simulate order placement
-            cart.showNotification('Đơn hàng của bạn đã được đặt thành công!');
-            
-            // Reset cart and form after successful order
-            setTimeout(() => {
-                cart.clearCart();
-                form.reset();
-                
-                // Redirect back to cart tab
-                cartContent.style.display = 'block';
-                orderForm.style.display = 'none';
-                cartTab.classList.add('active-tab');
-                orderTab.classList.remove('active-tab');
-            }, 2000);
+            return isValid;
+        }
+
+        // Step navigation button listeners
+        document.getElementById('to-step-2').addEventListener('click', () => { if (validateStep(1)) showStep(2); });
+        document.getElementById('back-to-step-1').addEventListener('click', () => showStep(1));
+        document.getElementById('to-step-3').addEventListener('click', () => { if (validateStep(2)) showStep(3); });
+        document.getElementById('back-to-step-2').addEventListener('click', () => showStep(2));
+        document.getElementById('to-step-4').addEventListener('click', () => {
+            if (validateStep(3)) {
+                updateOrderSummaryDetails(); // Update summary text fields
+                showStep(4);
+            }
         });
-        
+        document.getElementById('back-to-step-3').addEventListener('click', () => showStep(3));
+
+
+         // Function to update summary text fields before showing step 4
+         function updateOrderSummaryDetails() {
+            document.getElementById('summary-name').textContent = document.getElementById('fullname').value.trim();
+            document.getElementById('summary-email').textContent = document.getElementById('email').value.trim();
+            document.getElementById('summary-phone').textContent = document.getElementById('phone').value.trim();
+            document.getElementById('summary-notes').textContent = document.getElementById('notes').value.trim() || 'Không có';
+            document.getElementById('summary-address').textContent = document.getElementById('address').value.trim();
+            document.getElementById('summary-district').textContent = document.getElementById('district').value;
+            document.getElementById('summary-province').textContent = document.getElementById('province').value;
+
+            // Payment method
+            const paymentMethod = document.querySelector('input[name="payment_method"]:checked');
+            const paymentMethodText = {
+                'cod': 'Thanh toán khi nhận hàng (COD)',
+                'banking': 'Chuyển khoản ngân hàng', // Matched value 'banking'
+                'momo': 'Thanh toán qua MoMo',
+                'zalopay': 'Thanh toán qua ZaloPay'
+            };
+            document.getElementById('summary-payment').textContent = paymentMethod ? paymentMethodText[paymentMethod.value] : 'Chưa chọn';
+         }
+
+
         // Handle payment method changes to show/hide QR codes
         document.querySelectorAll('.payment-method').forEach(radio => {
             radio.addEventListener('change', function() {
@@ -1125,29 +1810,255 @@
                 document.querySelectorAll('.qr-code-container').forEach(container => {
                     container.style.display = 'none';
                 });
-                
-                // Show the selected payment method's QR code
-                if (this.value === 'banking') {
-                    document.getElementById('bankingQR').style.display = 'block';
-                } else if (this.value === 'momo') {
-                    document.getElementById('momoQR').style.display = 'block';
-                } else if (this.value === 'zalopay') {
-                    document.getElementById('zalopayQR').style.display = 'block';
+
+                // Show the selected payment method's QR/Details
+                const selectedValue = this.value;
+                 const qrContainer = document.getElementById(`${selectedValue}QR`); // e.g., bankingQR, momoQR
+                if (qrContainer) {
+                    qrContainer.style.display = 'block';
                 }
             });
         });
-        
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            cart.showNotification('Tin nhắn của bạn đã được gửi. Chúng tôi sẽ liên hệ lại sớm!');
-            this.reset();
+
+        // --- Complete Order ---
+        document.getElementById('complete-order').addEventListener('click', function() {
+            if (cart.items.length === 0) {
+                cart.showNotification('Giỏ hàng trống, không thể đặt hàng.');
+                return;
+            }
+             // Final validation check (redundant but safe)
+             if (!validateStep(1) || !validateStep(2) || !validateStep(3)) {
+                 cart.showNotification('Vui lòng hoàn tất các bước trước đó.');
+                 // Optionally force back to the first invalid step
+                 if (!validateStep(1)) showStep(1);
+                 else if (!validateStep(2)) showStep(2);
+                 else if (!validateStep(3)) showStep(3);
+                 return;
+             }
+
+            // Generate random order code
+            const orderCode = 'EC' + Math.floor(Math.random() * 1000000).toString().padStart(6, '0');
+            document.getElementById('order-code').textContent = orderCode;
+
+            // Display total and payment method in confirmation modal
+            document.getElementById('order-total-confirm').textContent = document.getElementById('summary-total').textContent; // Get final total
+            document.getElementById('order-payment-confirm').textContent = document.getElementById('summary-payment').textContent; // Get selected payment
+
+            // Show confirmation modal
+            document.getElementById('order-confirmation-modal').classList.remove('hidden');
+
+             // --- Simulate sending order data to server here ---
+             const orderData = {
+                code: orderCode,
+                customer: {
+                    name: document.getElementById('fullname').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    phone: document.getElementById('phone').value.trim(),
+                    notes: document.getElementById('notes').value.trim()
+                },
+                shipping: {
+                    province: document.getElementById('province').value,
+                    district: document.getElementById('district').value,
+                    address: document.getElementById('address').value.trim(),
+                    fee: parseInt(document.getElementById('shippingFee').textContent.replace(/\D/g, '')) || 30000
+                },
+                paymentMethod: document.querySelector('input[name="payment_method"]:checked')?.value,
+                items: cart.items,
+                subtotal: cart.getTotal(),
+                total: cart.getTotal() + (parseInt(document.getElementById('shippingFee').textContent.replace(/\D/g, '')) || 30000)
+             };
+             console.log("Order Data to Send:", orderData);
+             // In a real app: send(orderData);
+             // --- End simulation ---
+
+
+            // Clear cart after order is "completed"
+            cart.clearCart();
+
+            // Reset checkout form fields
+             document.getElementById('fullname').value = '';
+             document.getElementById('email').value = '';
+             document.getElementById('phone').value = '';
+             document.getElementById('notes').value = '';
+             document.getElementById('province').value = '';
+             document.getElementById('district').innerHTML = '<option value="">Chọn Quận/Huyện</option>';
+             document.getElementById('district').disabled = true;
+             document.getElementById('address').value = '';
+             // Reset payment method to default (COD)
+             document.querySelector('input[name="payment_method"][value="cod"]').checked = true;
+             document.querySelectorAll('.qr-code-container').forEach(c => c.style.display = 'none');
+
+
+            // Switch back to cart tab view (which will now show empty)
+             cartContent.style.display = 'block';
+             orderForm.style.display = 'none';
+             cartTab.classList.add('active-tab');
+             cartTab.classList.remove('inactive-tab');
+             orderTab.classList.remove('active-tab');
+             orderTab.classList.add('inactive-tab');
         });
-        
-        // Initialize cart on page load
+
+        // Close confirmation modal
+        document.getElementById('close-confirmation').addEventListener('click', function() {
+            document.getElementById('order-confirmation-modal').classList.add('hidden');
+        });
+
+        // --- Mobile Menu ---
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Authentication Modal ---
+        const authModal = document.getElementById('auth-modal');
+        const openAuthModalBtns = [
+            document.getElementById('open-auth-modal'),
+            document.getElementById('open-auth-modal-mobile')
+        ];
+        const closeAuthModalBtn = document.getElementById('close-auth-modal');
+        const loginTab = document.getElementById('login-tab');
+        const registerTab = document.getElementById('register-tab');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+
+        openAuthModalBtns.forEach(btn => {
+            if(btn) btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                authModal.classList.remove('hidden');
+                 // Close mobile menu if it was the trigger
+                 const mobileMenu = document.getElementById('mobile-menu');
+                 if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                 }
+            });
+        });
+
+        if(closeAuthModalBtn) closeAuthModalBtn.addEventListener('click', () => {
+            authModal.classList.add('hidden');
+        });
+
+        // Close modal if clicking outside the content
+         if(authModal) authModal.addEventListener('click', (e) => {
+             if (e.target === authModal) {
+                 authModal.classList.add('hidden');
+             }
+         });
+
+
+        // Auth tabs switching
+        if(loginTab && registerTab && loginForm && registerForm) {
+            loginTab.addEventListener('click', () => {
+                loginTab.classList.add('auth-tab-active');
+                registerTab.classList.remove('auth-tab-active');
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+            });
+
+            registerTab.addEventListener('click', () => {
+                registerTab.classList.add('auth-tab-active');
+                loginTab.classList.remove('auth-tab-active');
+                registerForm.classList.remove('hidden');
+                loginForm.classList.add('hidden');
+            });
+        }
+
+        // --- Login/Register Form Handling (Placeholder) ---
+        const loginButton = document.getElementById('login-button');
+        const registerButton = document.getElementById('register-button');
+
+         if(loginButton) loginButton.addEventListener('click', () => {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            if (!email || !password) {
+                cart.showNotification('Vui lòng nhập email và mật khẩu.'); // Use notification
+                return;
+            }
+            // TODO: Implement actual login logic
+            cart.showNotification('Đăng nhập thành công! (Demo)');
+             console.log("Login attempt:", { email });
+            authModal.classList.add('hidden'); // Close modal on success
+        });
+
+         if(registerButton) registerButton.addEventListener('click', () => {
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const phone = document.getElementById('register-phone').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const agreed = document.querySelector('#register-form input[type="checkbox"]').checked;
+
+            let errorMessage = '';
+            if (!name) errorMessage = 'Vui lòng nhập họ tên.';
+            else if (!email || !/^\S+@\S+\.\S+$/.test(email)) errorMessage = 'Vui lòng nhập email hợp lệ.';
+            else if (!phone || !/^\d{10,}$/.test(phone)) errorMessage = 'Vui lòng nhập số điện thoại hợp lệ.';
+            else if (!password) errorMessage = 'Vui lòng nhập mật khẩu.';
+            else if (password !== confirmPassword) errorMessage = 'Mật khẩu xác nhận không khớp.';
+             else if (!agreed) errorMessage = 'Bạn cần đồng ý với điều khoản và chính sách.';
+
+
+            if (errorMessage) {
+                cart.showNotification(errorMessage);
+                return;
+            }
+
+            // TODO: Implement actual registration logic
+            cart.showNotification('Đăng ký thành công! (Demo)');
+             console.log("Register attempt:", { name, email, phone });
+            authModal.classList.add('hidden'); // Close modal on success
+        });
+
+
+        // --- Contact Form Submission ---
+        const contactForm = document.getElementById('contactForm');
+        if(contactForm) contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+             // Basic validation
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message').value;
+             if (!name || !email || !message) {
+                cart.showNotification('Vui lòng điền đầy đủ họ tên, email và tin nhắn.');
+                 return;
+             }
+             if (!/^\S+@\S+\.\S+$/.test(email)) {
+                 cart.showNotification('Vui lòng nhập địa chỉ email hợp lệ.');
+                 return;
+             }
+
+             // Simulate submission
+            cart.showNotification('Tin nhắn của bạn đã được gửi. Chúng tôi sẽ liên hệ lại sớm!');
+             console.log("Contact Form Data:", {
+                 name,
+                 email,
+                 phone: document.getElementById('contact-phone').value,
+                 message
+             });
+            this.reset(); // Clear the form
+        });
+
+        // --- Initialize Cart on Page Load ---
         document.addEventListener('DOMContentLoaded', function() {
             cart.loadCart();
+            // Ensure the initial view is correct (Cart tab active, Step 1 shown if navigating directly to #order)
+            if(window.location.hash === '#order') {
+                 proceedToCheckout.click(); // Simulate clicking proceed if landing on #order (optional)
+            } else {
+                // Default view: Cart tab visible, order form hidden
+                cartContent.style.display = 'block';
+                orderForm.style.display = 'none';
+                cartTab.classList.add('active-tab');
+                orderTab.classList.remove('active-tab');
+                orderTab.classList.add('inactive-tab');
+            }
+            // Initialize district dropdown state
+            document.getElementById('district').disabled = !document.getElementById('province').value;
         });
+
+        // Logo click to top (already has smooth scroll)
+        // No extra JS needed if the logo href="#home" and smooth scroll is active
+
     </script>
+
 </body>
 </html>
+```
